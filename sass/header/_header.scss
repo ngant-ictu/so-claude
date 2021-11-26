@@ -1,0 +1,443 @@
+#sosearchpro .dropdown-menu .media-body .box-price span{
+    float: $left;
+    padding: side-values(0 10px 0 0px);
+}
+#sosearchpro .dropdown-menu .media:hover{
+    background-color: transparent;
+}
+header .dropdown-menu > li .btn-block img{
+    position: relative; top: -1px;
+}
+
+.id3-item{
+    display: none;
+}
+// so searchpro
+header #sosearchpro .dropdown-menu{
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0;
+}
+
+.navbar-compact .hidden-compact{
+    display: none;
+}
+
+.shopping_cart .btn-view-cart:hover{
+    color: #fff;
+}
+header{
+    .navbar-default{
+        background-color: transparent;
+        .megamenu-wrapper{
+            background-color: transparent;
+        }
+    }
+    ul.megamenu > li > a{
+        text-shadow: unset;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .container-megamenu ul.megamenu li.item-style1 .sub-menu .content{
+        width: 870px;
+    }
+    header .btn-shopping-cart .dropdown-menu{
+        min-width: 340px;
+    }
+    header .shopping_cart .dropdown-menu .content-item{
+        max-height: 315px;
+    }
+    
+}
+
+.shopping_cart .fa-check-circle{
+    display: none;
+}
+#header #sosearchpro.so-search .searchbox .select_category select:hover{
+    cursor: pointer;
+}
+.dropdown-menu.shoppingcart-box .table{
+    margin-bottom: 0;
+    .btn-danger{
+        background-color: transparent;
+        i{
+            color: #666;
+        }
+        &:hover{
+            i{
+                color: $linkColor;
+            }
+        }
+    }
+}
+
+header #sosearchpro .dropdown-menu{
+    border-radius: 0;
+}
+
+header ul.top-link > li.language .btn-link img{
+    margin-top: -1px;
+}
+
+
+
+/*============ HEADER  ==================*/
+.common-home .horizontal  ul.megamenu > li.home > a{
+    background: transparent;
+    color: $linkColor;
+}
+.container-megamenu.horizontal ul.megamenu > li.home > a{
+    background-color: transparent;
+}
+.container-megamenu.horizontal{
+    ul.megamenu > li.active > a, 
+    ul.megamenu > li:hover > a{
+        background-color: transparent;
+        color: $linkColor;
+    }
+    .subcategory li a{@include linkGray();}
+}
+.header-top .header-top-left .welcome-msg .owl2-carousel .owl2-stage-outer{ direction: ltr; }
+.mega-horizontal .navbar-default{border: none;background: transparent;}
+@media (max-width: 991px){
+    .responsive ul.megamenu > li.click:before,
+    .responsive ul.megamenu > li.hover:before {
+        #{$right}: 0;
+        #{$left}: auto;
+    }
+    .responsive ul.megamenu > li.active .close-menu{
+        #{$right}: 0;
+        #{$left}: auto;
+    }
+}
+
+.header-bottom .content_menu .container{overflow: visible;}
+.btn-shopping-cart {
+    .dropdown-menu{
+        min-width: 320px;        
+        .cart_product_name{@include linkGray();}
+        .empty{
+            padding: 15px;
+            margin: 0;
+    
+        }
+    }
+    .table>tbody>tr>td{border: none;border-bottom: 1px solid $gray-lighter;vertical-align: middle;}
+    .checkout{padding: 0 20px 10px;}
+    .added_items{padding: 10px;}
+}   
+
+
+
+.megamenu-style-dev{position: relative;
+    .vertical{
+        ul.megamenu{position: absolute; width: 100%; background: #222; z-index: 99;
+            > li > a{font-size: 11px;}
+        } 
+        .vertical ul.megamenu > li{margin: 0; border-right: 0; background: #222;
+            strong i{display: none;}
+                    >a {padding-left: 15px;padding-right: 12px; color: #fff;
+                                    &:hover{color: #fff;}
+            }
+            &.css-menu{
+                .sub-menu .content{padding: 0;}
+                .hover-menu .menu >ul{padding: 0; margin: 0;
+                    li{
+                        border-bottom: 1px solid #eee;
+                        &:hover{background: #eee;
+                            > a{color: $linkColor;}
+                        }
+                        a{line-height: 37px;
+                            b{line-height: 37px; font-size: 16px;margin: 0 20px;}
+                        }
+                        &:last-child{border: none;}
+                    }
+                    ul{padding: 0; left: 100%;margin: 0;box-shadow: none;border: 1px solid #eee;min-width: 200px;
+                        &:before, &:after{display: none;}
+                    }
+                } 
+            }
+            &.item-style3{
+                        .sub-menu .content{padding-right: 0;}
+            }
+            &.with-sub-menu{
+                > a:after{content: "\f105";color: #fff;font-family: Fontawesome; font-size: 13px; float: right; margin: 0;}
+                
+                &:hover > a:after{position: static; border-color: transparent;}
+                
+            }
+            &:hover{background-color: #444;
+                >a{color: #fff;}
+            }
+            &.active > a{background: transparent !important;}
+            
+            &.style1 .content:after{
+            }       
+            .sub-menu .content{border-top: 1px solid #ddd;
+                .banner{margin-top: -21px; margin-bottom: -22px; margin-right: -1px;}
+                .static-menu .menu ul a.main-menu{padding: 0;}
+            }
+        }
+        ul.megamenu .sub-menu .content .static-menu .menu ul {padding-bottom: 0;
+            li >a{line-height: inherit; padding-bottom: 0; border-bottom: none; min-height: auto;
+                 &:hover{color: $linkColor;}
+            }
+            ul a{padding: 0;
+                 &:hover{color: $linkColor;} 
+            }
+        }
+    }
+}
+.container-megamenu.vertical #menuHeading .megamenuToogle-pattern .container{
+    background-color: $background;
+}
+/*======================================================*/
+.typeheader-1 .welcome-msg a:hover,
+.typeheader-1 .socials li a:hover,
+
+.typeheader-1 ul.top-link > li .btn-group .btn-link:hover,
+.typeheader-1 ul.top-link > li > a:hover{
+    color: $linkColor;
+}
+
+.typeheader-1 #sosearchpro .search button{
+    &:hover i{
+        color: $linkColor;
+    }
+}
+
+.typeheader-1 .account:hover i,
+.typeheader-1 .top-link-wishlist:hover i,
+.typeheader-1 .search-header-w .ico-search:hover i,
+.typeheader-1 .search-header-w .ico-search.active i{
+    color: $linkColor;
+}
+.typeheader-1 .shopping_cart .btn-shopping-cart .top_cart .icon-c:hover svg{
+    fill: $linkColor;
+}
+
+
+// header 2
+.typeheader-2 .welcome-msg a:hover,
+.typeheader-2 .socials li a:hover,
+
+.typeheader-2 ul.top-link > li .btn-group .btn-link:hover,
+.typeheader-2 ul.top-link > li > a:hover{
+    color: $linkColor;
+}
+
+.typeheader-2 #sosearchpro .search button{
+    &:hover i{
+        color: $linkColor;
+    }
+}
+
+.typeheader-2 .account:hover i,
+.typeheader-2 .top-link-wishlist:hover i,
+.typeheader-2 .search-header-w .ico-search:hover i,
+.typeheader-2 .search-header-w .ico-search.active i{
+    color: $linkColor;
+}
+.typeheader-2 .shopping_cart .btn-shopping-cart .top_cart .icon-c:hover svg{
+    fill: $linkColor;
+}
+
+
+
+
+// header 3
+.typeheader-3 .welcome-msg a:hover,
+.typeheader-3 .socials li a:hover,
+
+.typeheader-3 ul.top-link > li .btn-group .btn-link:hover,
+.typeheader-3 ul.top-link > li > a:hover{
+    color: $linkColor;
+}
+
+.typeheader-3 #sosearchpro .search button{
+    &:hover i{
+        color: $linkColor;
+    }
+}
+
+.typeheader-3 .account:hover i,
+.typeheader-3 .top-link-wishlist:hover i,
+.typeheader-3 .search-header-w .ico-search:hover i,
+.typeheader-3 .search-header-w .ico-search.active i{
+    color: $linkColor;
+}
+.typeheader-3 .shopping_cart .btn-shopping-cart .top_cart .icon-c:hover svg{
+    fill: $linkColor;
+}
+
+// header 4
+.typeheader-4 .welcome-msg a:hover,
+.typeheader-4 .socials li a:hover,
+
+.typeheader-4 ul.top-link > li .btn-group .btn-link:hover,
+.typeheader-4 ul.top-link > li > a:hover{
+    color: $linkColor;
+}
+
+.typeheader-4 #sosearchpro .search button{
+    &:hover i{
+        color: $linkColor;
+    }
+}
+
+.typeheader-4 .account:hover i,
+.typeheader-4 .top-link-wishlist:hover i,
+.typeheader-4 .search-header-w .ico-search:hover i,
+.typeheader-4 .search-header-w .ico-search.active i{
+    color: $linkColor;
+}
+.typeheader-4 .shopping_cart .btn-shopping-cart .top_cart .icon-c:hover svg{
+    fill: $linkColor;
+}
+// header 5
+.typeheader-5 .welcome-msg a:hover,
+.typeheader-5 .socials li a:hover,
+
+.typeheader-5 ul.top-link > li .btn-group .btn-link:hover,
+.typeheader-5 ul.top-link > li > a:hover{
+    color: $linkColor;
+}
+
+.typeheader-5 #sosearchpro .search button{
+    &:hover i{
+        color: $linkColor;
+    }
+}
+
+.typeheader-5 .account:hover i,
+.typeheader-5 .top-link-wishlist:hover i,
+.typeheader-5 .search-header-w .ico-search:hover i,
+.typeheader-5 .search-header-w .ico-search.active i{
+    color: $linkColor;
+}
+.typeheader-5 .shopping_cart .btn-shopping-cart .top_cart .icon-c:hover svg{
+    fill: $linkColor;
+}
+
+// header 6
+.typeheader-6.navbar-compact,
+.typeheader-6 {
+    .welcome-msg a:hover,
+    .socials li a:hover,
+
+    ul.top-link > li .btn-group .btn-link:hover,
+    ul.top-link > li > a:hover{
+        color: $linkColor;
+    }
+
+    #sosearchpro .search button{
+        &:hover i{
+            color: $linkColor;
+        }
+    }
+
+    .account:hover i,
+    .top-link-wishlist:hover i,
+    .search-header-w .ico-search:hover i,
+    .search-header-w .ico-search.active i{
+        color: $linkColor;
+    }
+    .shopping_cart .btn-shopping-cart .top_cart .icon-c:hover svg{
+        fill: $linkColor;
+    }
+
+    .container-megamenu.horizontal ul.megamenu > li > a:hover{
+        color: $linkColor;
+    }
+
+    .socials li a:hover{
+        border-color: $linkColor;
+        background-color: $background;
+        color: #fff;
+    }
+}
+
+// header 7
+.typeheader-7.navbar-compact,
+.typeheader-7 {
+    .welcome-msg a:hover,
+    .socials li a:hover,
+
+    ul.top-link > li .btn-group .btn-link:hover,
+    ul.top-link > li > a:hover{
+        color: $linkColor;
+    }
+
+    #sosearchpro .search button{
+        &:hover i{
+            color: $linkColor;
+        }
+    }
+
+    .account:hover i,
+    .top-link-wishlist:hover i,
+    .search-header-w .ico-search:hover i,
+    .search-header-w .ico-search.active i{
+        color: $linkColor;
+    }
+    .shopping_cart .btn-shopping-cart .top_cart .icon-c:hover svg{
+        fill: $linkColor;
+    }
+
+    .container-megamenu.horizontal ul.megamenu > li > a:hover{
+        color: $linkColor;
+    }
+
+    .socials li a:hover{
+        border-color: $linkColor;
+        background-color: $background;
+        color: #fff;
+    }
+}
+
+// header 8
+.typeheader-8 .welcome-msg a:hover,
+.typeheader-8 .socials li a:hover,
+
+.typeheader-8 ul.top-link > li .btn-group .btn-link:hover,
+.typeheader-8 ul.top-link > li > a:hover{
+    color: $linkColor;
+}
+
+.typeheader-8 #sosearchpro .search button{
+    &:hover i{
+        color: $linkColor;
+    }
+}
+
+.typeheader-8 .account:hover i,
+.typeheader-8 .top-link-wishlist:hover i,
+.typeheader-8 .search-header-w .ico-search:hover i,
+.typeheader-8 .search-header-w .ico-search.active i{
+    color: $linkColor;
+}
+.typeheader-8 .shopping_cart .btn-shopping-cart .top_cart .icon-c:hover svg{
+    fill: $linkColor;
+}
+
+
+// color responsive
+@media (max-width: 991px){
+    .typeheader-2 .header-bottom{
+        background-color: $background;
+    }
+    body .typeheader-3 .header-bottom{
+        background-color: $background;
+    }
+    .megamenu-style-dev .navbar-default .vertical .vertical-wrapper ul.megamenu > li > a:hover strong,
+    .megamenu-style-dev .navbar-default .horizontal .megamenu-wrapper ul.megamenu > li > a:hover{
+        color: $linkColor !important;
+    } 
+}
+@media (max-width: 991px){
+    .typeheader-4 .header-bottom{
+        background-color: darken($background,5%);
+    }
+}
+

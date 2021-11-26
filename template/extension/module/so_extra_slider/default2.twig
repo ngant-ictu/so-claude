@@ -1,0 +1,166 @@
+<!-- default Grid  -->
+<div class="module {{direction_class}} {{ class_suffix }}">
+	{% if disp_title_module %} 
+		<h3 class="modtitle"><span>{{ head_name }}</span></h3>
+	{% endif %}
+
+	{% if pre_text|trim is not empty  %} 
+		<div class="form-group">
+			{{ pre_text }}
+		</div>
+	{% endif %}
+
+	<div class="modcontent">
+		
+		{% if products is empty %}
+			<div class="alert alert-info"><i class="fa fa-info-circle"></i> 
+				{{ text_noproduct }}
+				<button type="button" class="close" data-dismiss="alert">×</button>
+			</div>
+
+		{% else %}
+			{% set count_item 	= products|length %}	
+			{% set cls_btn_page =  (button_page  ==  'top') ? 'buttom-type1':'button-type2' %}	
+			{% set btn_type 	=  (button_page  ==  'top') ? 'button-type1':'button-type2'%}
+			
+			{% set tag_id = 'so_extra_slider_'~suffix %}
+			{% set class_respl = 'preset00-'~nb_column0~' preset01-'~nb_column1~' preset02-'~nb_column2~' preset03-'~nb_column3~' preset04-'~nb_column4 %}
+			{% set btn_prev = (button_page == 'top') ? '&#171':'&#139' %}
+			{% set btn_next = (button_page == 'top') ? '&#187':'&#155' %}
+			{% set i = 0 %}
+
+			<div id="{{tag_id}}" class="so-extraslider product_masonry  {{cls_btn_page}} {{class_respl}} {{btn_type}}">
+				<!-- Begin extraslider-inner -->
+				<div class="extraslider-inner products-list " data-effect="{{effect}}">
+					{% for i, product in products %}
+						{% set i = i + 1 %}
+						{% if i % nb_rows  ==  1  or  nb_rows  ==  1 %} 
+						<div class="item col-md-3 col-sm-4 col-xs-12 mt_30">
+						{% endif %} 
+
+							<div class="product-layout product-grid {{ products_style }} ">
+								<div class="product-item-container">
+									<div class="left-block">									
+										<div class="product-image-container {% if product_image_num  == 2 %} {{ 'second_img' }} {% endif %}	">
+											<a href="{{ product.href }}" target="{{ item_link_target }}" title="{{ product.nameFull }} "  >
+												{% if product_image_num ==2 %}
+													<img data-sizes="auto" src="{{ product.thumb }}" class="img-1" alt="{{ product.nameFull }}" />
+													<img data-sizes="auto"  src="{{ product.thumb2 }}" class="img-2" alt="{{ product.nameFull }}">
+												{% else %}
+													<img data-sizes="auto" src="{{ product.thumb }}" class="img-1" alt="{{ product.nameFull }}" />
+												{% endif %}
+											</a>						
+											
+										</div>
+
+										{% if product.special and  product.productNew %} 
+										<div class="box-label">
+											{% if product.special  and  display_sale  %} 
+												<span class="label-product label-sale">{# {{ objlang.get('text_sale') }} #} {{ product.discount }}  </span>
+											{% endif %} 
+
+											{% if product.productNew  and  display_new  %} 
+												<span class="label-product label-new">{{ objlang.get('text_new') }} </span>
+											{% endif %} 											
+										</div>
+										{% endif %}
+										{% if display_addtocart  %} 
+											<button type="button" class="addToCart btn-button" title="{{ objlang.get('button_cart') }}" onclick="cart.add('{{ product.product_id }}');"><span>{{ objlang.get('button_cart') }} </span></button>
+										{% endif %} 						
+										<div class="button-group cartinfo--left">
+											<div class="so-quickview">
+												<a class="hidden" data-product='{{ product.product_id }}' href="{{ product.href }}"></a>
+											</div>
+											{% if display_wishlist  %} 
+											<button type="button" class="wishlist btn-button" title="{{ objlang.get('button_wishlist') }}" onclick="wishlist.add('{{ product.product_id }}');"><i class="pe-7s-like"></i></button>
+											{% endif %} 
+											
+											{% if display_compare %} 
+											<button type="button" class="compare btn-button" title="{{ objlang.get('button_compare') }}" onclick="compare.add('{{ product.product_id }}');"><i class="pe-7s-graph3"></i></button>
+											{% endif %} 
+
+										</div>
+											
+										<div class="right-block caption">
+										{% if display_title %} 
+											<h4>
+												<a href="{{ product.href }}" target="{{ item_link_target }}" title="{{ product.nameFull }} "  >
+													{{ product.name }} 
+												</a>
+											</h4>
+										{% endif %}
+
+										{% if display_rating %}
+											{% if product.rating %}
+												<div class="rating">
+													{% for k in 1..5 %}
+														
+														{% if product.rating < k %} 
+															<span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+													 	{% else %}   
+															<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+														{% endif %} 
+														{% set k = k + 1 %}
+													{% endfor %} 
+												</div>
+											{% else %}  
+											<div class="rating">
+												{% for j in 1..5 %}
+													
+													<span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+													{% set j = j + 1 %}
+												{% endfor %} 													
+											</div>
+											{% endif %}	
+										{% endif %}	
+										
+										{% if display_price %} 
+											<div  class="price">
+												{% if not product.special %} 
+													<span class="price-new">
+														{{ product.price }} 
+													</span>
+												{% else %}   
+													<span class="price-new">{{ product.special }} </span>&nbsp;&nbsp;
+													<span class="price-old">{{ product.price }} </span>&nbsp;
+												{% endif %} 
+												
+											</div>
+										{% endif %} 
+	
+										{% if display_description %} 
+											<div class="item-des">
+												{{ product.description }} 
+											</div>
+										{% endif %} 
+									</div>				
+									</div>
+
+									
+			
+								</div>
+								<!-- End item-wrap-inner -->
+							</div>
+							<!-- End item-wrap -->
+
+						{% if i % nb_rows  ==  0  or  i  ==  count_item %} 
+						</div>
+						{% endif %} 
+
+					{% endfor %}	 
+				</div>
+				<!--End extraslider-inner -->
+
+				
+
+			</div>
+		{% endif %}
+	
+	</div> 
+	{% if post_text|trim is not empty  %} 
+		<div class="form-group">
+			{{ post_text  }}
+		</div>
+	{% endif %}
+
+</div>

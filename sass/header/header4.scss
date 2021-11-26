@@ -1,0 +1,330 @@
+
+
+
+//** simple and lightweight mixin library for Sass **
+//-- url : http://bourbon.io/docs ---
+@import 'bourbon/bourbon';
+
+//** Mixins for Rem Font Sizing **
+//-- url : http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+@import 'utilities/rem';
+
+//** Variables for responsive design in bootstrap with sass **
+//-- url : https://gist.github.com/webinfinita/11407836
+@import 'utilities/bootstrap_breakpoints';
+
+//** Makes supporting both left-to-right (LTR) and right-to-left (RTL) easy.**
+//-- url : https://github.com/tysonmatanich/directional-scss
+@import 'utilities/directional';
+
+//Mixins utilities
+@import 'utilities/theme_variables';
+@import 'utilities/utilities';
+
+/*===============================================
+    [SASS DIRECTORY ]
+    
+    [1] BLOCK HEADER
+
+    
+==============================================*/
+
+.typeheader-4{
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    .row.no-margin{
+        margin: 0;
+    }
+    .dropdown-menu{
+        #{$right}: 0; #{$left}: auto;
+    }
+    // MENU ON TOP
+    &.navbar-compact{
+        background-position: $left 0;
+        .header-middle{
+            
+            margin: 0;
+        }
+        .header-bottom{
+            
+        }
+    
+    }
+    .header-top{
+        font-size: 12px;
+        background-color: #f6f6f8;
+        .module{
+            display: table-cell;
+            margin-bottom: 0;
+        }
+
+        .header-top-right{text-align:$right;}
+
+        .dropdown-menu{
+            li{
+                line-height: 22px;
+            }
+        }
+        .header-top-right {display: inline-block;}
+
+    }
+    ul.top-link{list-style: none;margin:0; vertical-align:top;
+        display: inline-flex;
+
+        > li{                
+            line-height: 40px;
+            position: relative;           
+            list-style: none;            
+            margin-#{$left}: 0px;
+            padding-#{$right}: 10px;
+            margin-#{$right}: 10px;
+            &:after{
+                position: absolute;
+                content: ""; width: 1px; height: 13px;
+                top: 14px; #{$right}: 0; background-color: #cdcdcd;
+            }
+            .btn-group{
+                line-height: 40px;
+                .btn-link{
+                    padding: 0;
+                    border: none;
+                    color: #878787;
+                }
+            }       
+            >   a {
+               // font-size: 13px;
+                color: #878787;
+                i{ margin-#{$right}: 5px; }
+            }
+
+            &:last-child{
+                padding-#{$right}: 0px;
+                margin-#{$right}: 0px;
+                &:after{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .header-middle{
+        clear: both;
+
+    }
+
+    .header-bottom{
+        clear: both;
+
+        .header-bottom-inner{
+            ul.megamenu { padding: 0 50px;}
+        }
+    }
+
+    .welcome-msg{
+        text-align: center;
+        line-height: 40px;
+        letter-spacing: 1px;
+        span{ color: #e50000; }
+        a{
+            color: #222;
+        }
+    }
+    .compare,
+    .top-link-wishlist { margin: 0 5px; display: block; line-height: 100%;
+        i{ font-size: 24px; color: #222; }
+    }
+
+    .header-top-right{
+        ul{ float: $right; }
+    }
+    .bottom-right{
+       
+        .inner{ float: $right; }
+        
+        .search-header-w,
+        .wishlist{
+            float: $left;
+            padding: 21px 0;
+        }
+    }
+   
+    .account{ float: $left; position: relative;  margin: 0 5px; padding: 20px 0;
+        > a{ display: block; line-height: 100%; }
+        i{ font-size: 24px; color: #222; }
+        .dropdown-menu{
+            #{$right}: -30px; #{$left}: auto;
+        }
+    }
+    .telephone{
+       ul{
+            li{
+                float: $left; line-height: 40px;
+                a span{ font-size: 16px; vertical-align: middle; }
+                &:first-child{
+                    margin-#{$right}: 10px;
+                }
+            }
+       }
+    }
+    .socials{
+        li{
+            display: inline-block; margin-#{$right}: 15px;
+            a{ font-size: 16px; color: #222;
+
+            }
+        }
+    }
+    /*=====SEARCH ======*/
+    .search-header-w{
+        margin: 0 5px;
+        position: relative;
+        .ico-search{                
+            width: 24px;
+            height: 24px;    
+            i{ font-size: 24px;  color: #222; }
+            
+            &:hover{
+                cursor: pointer;
+            }
+
+        }
+        #sosearchpro .search{
+            display: none;
+            position: absolute;  z-index: 99;
+            top: 100%;
+           #{$right}: -30px; #{$left}: auto;
+            margin-#{$right}: 0;
+            padding: 0;
+            width: 270px;
+            button{
+                padding: 0 15px;
+            }
+        }
+    }
+    #sosearchpro{
+        .text-keyword{ padding-#{$left}: 20px; margin-top: 5px;
+            .title-key b{ font-weight: 400; color: #545454; }
+            .item-key a{ color: #898989; text-decoration: underline; }
+        }
+        .search{
+            position: relative;
+            margin: 0;
+            width: 270px;
+            border: 1px solid #ddd;
+            button{
+                position: absolute;
+                top: 1px;
+                #{$right}: 1px;
+                height: 36px;
+                text-align: center;
+                line-height: 40px;
+                padding: 0 8px;
+                font-size: 14px;
+                color: #ddd; 
+                border-radius: 0;
+                background-color: #fff;
+                i{
+                    font-size: 18px;
+                    color: #444; 
+                }
+                span{ display: none; }
+            }
+            
+            input{
+                border: none;
+                border-radius: 0px;       
+                background-color: #fff;
+                z-index: 0;
+                height: 38px;
+                padding-#{$left}: 20px;
+                font-size: 12px;
+                width: 100%;
+                background-color: #fff;
+                color: #999;
+                &::-moz-placeholder {
+                    color: #999;
+                    opacity: 1; 
+                }
+                &:-ms-input-placeholder { color: #999; } 
+                &::-webkit-input-placeholder  { color: #999; } 
+                &:focus{
+                    z-index: 0;
+                }
+            }
+            
+        }
+    } 
+
+    /*BLOCK CART*/
+    .shopping_cart{
+        margin: 0 5px; padding: 19px 0; float: $left;
+        .btn-shopping-cart .top_cart{
+            position: relative; line-height: 100%;
+            .icon-c{          
+                float: $left;    
+                svg{
+                    fill: #666;
+                }             
+            }
+            .shopcart{
+                display: inline-flex;
+            }
+            .shopcart-inner{
+                display: inline-block; line-height: 40px;
+                .text-shopping-cart{
+                    display: none;
+                }
+                .total-shopping-cart{    
+                    .items_cart2,
+                    .items_carts{
+                        display: none;
+                    }
+                    .items_cart{
+                        background-color: #1d1c1c;
+                        width: 20px; height: 20px; border-radius: 100%;
+                        font-size: 12px; color: #fff;
+                        display: block; text-align: center; line-height: 20px;
+                        position: absolute;
+                        top: -10px; #{$right}: -10px;
+                    }
+                }
+            } 
+                
+        } 
+        .dropdown-menu{ top: 100%; #{$right}: 0; #{$left}: auto;
+            color: #666;
+        }
+        .shoppingcart-box:before{right: 50px;}
+    }
+
+
+    .main-menu-w{
+        
+    }
+    .logo{
+        padding: 17px 0;
+    }
+    
+
+    /*MENU MEGA*/
+    .megamenu-style-dev{
+        .navbar-default{ background: transparent; }
+    }
+    .container-megamenu.horizontal ul.megamenu{
+        text-align: center;
+        > li{
+            float: none;
+            display: inline-block;
+            .sub-menu li{
+                text-align: $left;
+            }
+        }  
+    } 
+
+
+}
+
+
+.wrapper-boxed{
+
+}
